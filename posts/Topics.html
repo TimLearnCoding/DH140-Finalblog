@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jintian He">
+<meta name="dcterms.date" content="2023-08-05">
+<meta name="description" content="Analysis about Lewis Carroll’s writing style">
 
-<title>myblog - Exploratory data analysis</title>
+<title>myblog - Lewis Carroll - Final Project Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,15 +146,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Exploratory data analysis</h1>
-                      </div>
+      <h1 class="title">Lewis Carroll - Final Project Blog</h1>
+                  <div>
+        <div class="description">
+          Analysis about Lewis Carroll’s writing style
+        </div>
+      </div>
+                </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jintian He </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">08/05/2023</p>
+      </div>
+    </div>
     
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">08/05/2023</p>
+      </div>
+    </div>
       
     </div>
     
@@ -166,10 +192,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="import-classics-csv-file-as-a-dataframe" class="level3">
-<h3 class="anchored" data-anchor-id="import-classics-csv-file-as-a-dataframe">import classics CSV file as a dataframe</h3>
-<div class="cell" data-scrolled="true" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<section id="mathematician-who-created-the-wonderland" class="level1">
+<h1>Mathematician Who Created the Wonderland</h1>
+<section id="a-computational-exploration-of-lewis-carrolls-writing-style" class="level2">
+<h2 class="anchored" data-anchor-id="a-computational-exploration-of-lewis-carrolls-writing-style">–a Computational Exploration of Lewis Carroll’s Writing Style</h2>
+</section>
+<section id="i.-introduction" class="level2">
+<h2 class="anchored" data-anchor-id="i.-introduction">I. Introduction</h2>
+<section id="project-overview" class="level3">
+<h3 class="anchored" data-anchor-id="project-overview">1.1 Project Overview</h3>
+<p>This project is a NLP project on CORGIS CSV Datasets’ Classics csv file extracted from Project Gutenberg (PG). Classics csv is a collection of the top 1000 most popular books and their metadata on PG, as determined by downloads. I perform NLP techniques particularly on Lewis Carroll’s works and compare them with other books in PG to research his writing style and discover other insights.</p>
+</section>
+<section id="research-question" class="level3">
+<h3 class="anchored" data-anchor-id="research-question">1.2 Research Question</h3>
+<p>What’s Lewis Carroll’s writing style and what qualities make him unique?</p>
+</section>
+<section id="motivation" class="level3">
+<h3 class="anchored" data-anchor-id="motivation">1.3 Motivation</h3>
+<p>Lewis Carroll,the author of <em>Alice’s Adventures in Wonderland</em> and its sequel <em>Through the Looking-Glass</em>, is one of the most well-known children’s fantasy writers from the 19th century. He’s also known by his real name Charles Lutwidge Dodgson, a brilliant mathematician and logician that invented the famous word ladder puzzle and had many significant contributions to the development of Mathematical Logic and Linear Algebra. While we’re astonished by Lewis’ outstanding achievements in both mathematics and literature, we may also want to explore the secret behind his talents–what he thinks about, how he reasons and the way he expresses. Apparently, the most direct key to access such secrets is his books.</p>
+<p>By reading his book, we’re able to explore the inner world of this great mind and absorb intellectual nutrition from his creations. However, such endeavors could be fairly time-consuming and almost an unbearable burden for nowadays busy people. We then wonder: rather than dig deeply into the depth of Lewis’ writings, is there a more direct way to extract insights of his works or writing style through some analytic efforts? Fortunately, today we have many advanced techniques allowing us to perform such tasks and Natural Language Processing(NLP) is one of the most well-known methods in this field.In this project, I will perform various data analysis techniques, including NLP, on Lewis Carroll’s available works on Gutenberg.org and extract some insights from the analyses attemptedly, through which we can hopefully understand Lewis Carroll’s writing style better.</p>
+</section>
+<section id="prior-related-work" class="level3">
+<h3 class="anchored" data-anchor-id="prior-related-work">1.4 Prior Related Work</h3>
+<p>Assignment 5–NLP, Assignment 4–web scraping and the other relevant python practices.</p>
+</section>
+</section>
+<section id="ii.-method-data-explanation-analytical-process" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-method-data-explanation-analytical-process">II. Method (Data Explanation + Analytical Process)</h2>
+<section id="data-importation-and-explanation" class="level3">
+<h3 class="anchored" data-anchor-id="data-importation-and-explanation">2.1 Data Importation and Explanation</h3>
+<div class="cell" data-scrolled="true" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing classis.csv file. It's avaible on CORGIS for download and in this github repo.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'classics.csv'</span></span>
@@ -179,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if the file is loaded sucessfully</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -338,13 +391,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="check-missing-data" class="level3">
-<h3 class="anchored" data-anchor-id="check-missing-data">check missing data</h3>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>missing_data <span class="op">=</span> df.isnull().<span class="bu">sum</span>()</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(missing_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-scrolled="true" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking Missing data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>missing_data <span class="op">=</span> df.isnull().<span class="bu">sum</span>()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(missing_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>bibliography.congress classifications              159
 bibliography.languages                               0
@@ -387,117 +438,905 @@ metrics.statistics.words                             0
 dtype: int64</code></pre>
 </div>
 </div>
-<p>We see 159 missing data in “bibliography.congress classifications” column and 155 in “bibliography.subjects” colum.</p>
-<p>How many authors are in the dataset?</p>
-<div class="cell" data-execution_count="87">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(df[<span class="st">"bibliography.author.name"</span>].unique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="87">
-<pre><code>555</code></pre>
+<p>We observe 159 missing data in “bibliography.congress classifications” column and 155 in “bibliography.subjects” column. Since both variables are not the primary focus of this research, we don’t need to further investigate these missing data. <br> We also wonder how many authors are in this dataset?</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"There are"</span>, <span class="bu">len</span>(df[<span class="st">"bibliography.author.name"</span>].unique()), <span class="st">"authors in classics.csv dataset."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>There are 555 authors in classics.csv dataset.</code></pre>
 </div>
 </div>
-<p>There are 555 authors in this dataset.</p>
-<p>Number of publications in each year?</p>
-<p>By making the number of bins equal to the number of total unique value, we get a histogram like this:</p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>dt1 <span class="op">=</span> df[<span class="st">"bibliography.publication.year"</span>]</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.hist(dt1, bins<span class="op">=</span> <span class="bu">len</span>(df[<span class="st">"bibliography.publication.year"</span>].unique()), edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value'</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram Example'</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="Topics_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
+<div class="cell" data-scrolled="true" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">bibliography.congress classifications</th>
+<th data-quarto-table-cell-role="th">bibliography.languages</th>
+<th data-quarto-table-cell-role="th">bibliography.subjects</th>
+<th data-quarto-table-cell-role="th">bibliography.title</th>
+<th data-quarto-table-cell-role="th">bibliography.type</th>
+<th data-quarto-table-cell-role="th">metadata.downloads</th>
+<th data-quarto-table-cell-role="th">metadata.id</th>
+<th data-quarto-table-cell-role="th">metadata.rank</th>
+<th data-quarto-table-cell-role="th">metadata.url</th>
+<th data-quarto-table-cell-role="th">bibliography.author.birth</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">metrics.sentiments.polarity</th>
+<th data-quarto-table-cell-role="th">metrics.sentiments.subjectivity</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.average letter per word</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.average sentence length</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.average sentence per word</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.characters</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.polysyllables</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.sentences</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.syllables</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.words</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>PZ,PR</td>
+<td>en</td>
+<td>Fantasy</td>
+<td>Alice's Adventures in Wonderland</td>
+<td>Text</td>
+<td>18882</td>
+<td>11</td>
+<td>3</td>
+<td>https://www.gutenberg.org/ebooks/11</td>
+<td>1832</td>
+<td>...</td>
+<td>0.041079</td>
+<td>0.497276</td>
+<td>4.65</td>
+<td>17.0</td>
+<td>0.06</td>
+<td>122719</td>
+<td>339</td>
+<td>1501</td>
+<td>33810.3</td>
+<td>26389</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">67</td>
+<td>PR,PZ</td>
+<td>en</td>
+<td>Fantasy</td>
+<td>Through the Looking-Glass</td>
+<td>Text</td>
+<td>3626</td>
+<td>12</td>
+<td>68</td>
+<td>https://www.gutenberg.org/ebooks/12</td>
+<td>1832</td>
+<td>...</td>
+<td>0.087243</td>
+<td>0.486645</td>
+<td>4.71</td>
+<td>15.0</td>
+<td>0.07</td>
+<td>137377</td>
+<td>373</td>
+<td>1938</td>
+<td>37274.4</td>
+<td>29170</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">183</td>
+<td>PZ,PR</td>
+<td>en</td>
+<td>Fantasy</td>
+<td>Alice's Adventures in Wonderland</td>
+<td>Text</td>
+<td>1660</td>
+<td>19033</td>
+<td>184</td>
+<td>https://www.gutenberg.org/ebooks/19033</td>
+<td>1832</td>
+<td>...</td>
+<td>0.030640</td>
+<td>0.470152</td>
+<td>4.66</td>
+<td>16.0</td>
+<td>0.06</td>
+<td>45325</td>
+<td>139</td>
+<td>592</td>
+<td>12559.5</td>
+<td>9721</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">275</td>
+<td>PZ,PR</td>
+<td>en</td>
+<td>Fantasy</td>
+<td>Alice's Adventures in Wonderland: Illustrated ...</td>
+<td>Text</td>
+<td>1229</td>
+<td>28885</td>
+<td>276</td>
+<td>https://www.gutenberg.org/ebooks/28885</td>
+<td>1832</td>
+<td>...</td>
+<td>0.036749</td>
+<td>0.498011</td>
+<td>4.71</td>
+<td>17.0</td>
+<td>0.06</td>
+<td>128331</td>
+<td>384</td>
+<td>1551</td>
+<td>35064.9</td>
+<td>27270</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">654</td>
+<td>PR,PZ</td>
+<td>de</td>
+<td>Fantasy</td>
+<td>Alice's Abenteuer im Wunderland</td>
+<td>Text</td>
+<td>599</td>
+<td>19778</td>
+<td>655</td>
+<td>https://www.gutenberg.org/ebooks/19778</td>
+<td>1832</td>
+<td>...</td>
+<td>0.414417</td>
+<td>0.538158</td>
+<td>5.39</td>
+<td>15.0</td>
+<td>0.06</td>
+<td>137490</td>
+<td>459</td>
+<td>1637</td>
+<td>34974.9</td>
+<td>25515</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">733</td>
+<td>BC</td>
+<td>en</td>
+<td>Logic -- Juvenile literature;Logic, Symbolic a...</td>
+<td>The Game of Logic</td>
+<td>Text</td>
+<td>544</td>
+<td>4763</td>
+<td>734</td>
+<td>https://www.gutenberg.org/ebooks/4763</td>
+<td>1832</td>
+<td>...</td>
+<td>0.072815</td>
+<td>0.494916</td>
+<td>5.48</td>
+<td>13.0</td>
+<td>0.08</td>
+<td>78980</td>
+<td>430</td>
+<td>1088</td>
+<td>18483.3</td>
+<td>14408</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">790</td>
+<td>BC</td>
+<td>en</td>
+<td>Logic, Symbolic and mathematical</td>
+<td>Symbolic Logic</td>
+<td>Text</td>
+<td>510</td>
+<td>28696</td>
+<td>791</td>
+<td>https://www.gutenberg.org/ebooks/28696</td>
+<td>1832</td>
+<td>...</td>
+<td>0.076662</td>
+<td>0.466312</td>
+<td>5.59</td>
+<td>13.0</td>
+<td>0.07</td>
+<td>313684</td>
+<td>2063</td>
+<td>4045</td>
+<td>69408.0</td>
+<td>56160</td>
+</tr>
+</tbody>
+</table>
+
+<p>7 rows × 38 columns</p>
 </div>
 </div>
-<p>We see the publication year is highly skewed to the left, where we observe most of books in this dataset are published in late 20th centery or after 2000s. In other words, most of them are published in recent 30 years.</p>
-<p>Relationship between number of difficul words and reading ease (metrics.difficulty.flesch reading ease)?</p>
-<div class="cell" data-execution_count="76">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+</div>
+<p>We manually examine Lewis Caroll related dataframe since it only has 7 rows/items and there’s no missing values in this dataframe. We also notice there’s 4 versions of Alice’s Adventure in Wonderland and one of them is in Germany. To avoid repetitive analysis on the same book, here we only select “https://www.gutenberg.org/ebooks/11 Alice’s Adventure in Wonderland with the higest download. Subsetting this dataframe to the no-repeat (np) dataframe we need for our detail analysis:</p>
+<div class="cell" data-scrolled="true" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_CL_np <span class="op">=</span> df_CL.iloc[[<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>]]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_CL_np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">bibliography.congress classifications</th>
+<th data-quarto-table-cell-role="th">bibliography.languages</th>
+<th data-quarto-table-cell-role="th">bibliography.subjects</th>
+<th data-quarto-table-cell-role="th">bibliography.title</th>
+<th data-quarto-table-cell-role="th">bibliography.type</th>
+<th data-quarto-table-cell-role="th">metadata.downloads</th>
+<th data-quarto-table-cell-role="th">metadata.id</th>
+<th data-quarto-table-cell-role="th">metadata.rank</th>
+<th data-quarto-table-cell-role="th">metadata.url</th>
+<th data-quarto-table-cell-role="th">bibliography.author.birth</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">metrics.sentiments.polarity</th>
+<th data-quarto-table-cell-role="th">metrics.sentiments.subjectivity</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.average letter per word</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.average sentence length</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.average sentence per word</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.characters</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.polysyllables</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.sentences</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.syllables</th>
+<th data-quarto-table-cell-role="th">metrics.statistics.words</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>PZ,PR</td>
+<td>en</td>
+<td>Fantasy</td>
+<td>Alice's Adventures in Wonderland</td>
+<td>Text</td>
+<td>18882</td>
+<td>11</td>
+<td>3</td>
+<td>https://www.gutenberg.org/ebooks/11</td>
+<td>1832</td>
+<td>...</td>
+<td>0.041079</td>
+<td>0.497276</td>
+<td>4.65</td>
+<td>17.0</td>
+<td>0.06</td>
+<td>122719</td>
+<td>339</td>
+<td>1501</td>
+<td>33810.3</td>
+<td>26389</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">67</td>
+<td>PR,PZ</td>
+<td>en</td>
+<td>Fantasy</td>
+<td>Through the Looking-Glass</td>
+<td>Text</td>
+<td>3626</td>
+<td>12</td>
+<td>68</td>
+<td>https://www.gutenberg.org/ebooks/12</td>
+<td>1832</td>
+<td>...</td>
+<td>0.087243</td>
+<td>0.486645</td>
+<td>4.71</td>
+<td>15.0</td>
+<td>0.07</td>
+<td>137377</td>
+<td>373</td>
+<td>1938</td>
+<td>37274.4</td>
+<td>29170</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">733</td>
+<td>BC</td>
+<td>en</td>
+<td>Logic -- Juvenile literature;Logic, Symbolic a...</td>
+<td>The Game of Logic</td>
+<td>Text</td>
+<td>544</td>
+<td>4763</td>
+<td>734</td>
+<td>https://www.gutenberg.org/ebooks/4763</td>
+<td>1832</td>
+<td>...</td>
+<td>0.072815</td>
+<td>0.494916</td>
+<td>5.48</td>
+<td>13.0</td>
+<td>0.08</td>
+<td>78980</td>
+<td>430</td>
+<td>1088</td>
+<td>18483.3</td>
+<td>14408</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">790</td>
+<td>BC</td>
+<td>en</td>
+<td>Logic, Symbolic and mathematical</td>
+<td>Symbolic Logic</td>
+<td>Text</td>
+<td>510</td>
+<td>28696</td>
+<td>791</td>
+<td>https://www.gutenberg.org/ebooks/28696</td>
+<td>1832</td>
+<td>...</td>
+<td>0.076662</td>
+<td>0.466312</td>
+<td>5.59</td>
+<td>13.0</td>
+<td>0.07</td>
+<td>313684</td>
+<td>2063</td>
+<td>4045</td>
+<td>69408.0</td>
+<td>56160</td>
+</tr>
+</tbody>
+</table>
+
+<p>4 rows × 38 columns</p>
+</div>
+</div>
+</div>
+<p>Each “Plain Text UTF-8” file is stored in its corresponding metadata.url with addtional suffix “/pg{metadata.id}.txt”. With this feature we can extract the plain text of these four books by their “metadata.url”. Append this to the above dataframe:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>metadata_ids <span class="op">=</span> df_CL_np[<span class="st">"metadata.id"</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plaintext_urls <span class="op">=</span> []</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df[<span class="st">"metrics.difficulty.difficult words"</span>]</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"metrics.difficulty.flesch reading ease"</span>]</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [xi <span class="cf">for</span> xi <span class="kw">in</span> x <span class="cf">if</span> xi <span class="op">&lt;</span> <span class="dv">10000</span>]</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [y[i] <span class="cf">for</span> i, xi <span class="kw">in</span> <span class="bu">enumerate</span>(x) <span class="cf">if</span> xi <span class="op">&lt;</span> <span class="dv">10000</span>]</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'# of difficult words'</span>)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'flesch reading ease'</span>)</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Scatter Plot Example'</span>)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>lm <span class="op">=</span> LinearRegression()</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(filtered_x).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array(filtered_y).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>lm.fit(x,y )</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the coefficients of the linear model</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>slope <span class="op">=</span> lm.coef_[<span class="dv">0</span>]</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>intercept <span class="op">=</span> lm.intercept_</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>plt.plot(x, slope <span class="op">*</span> x <span class="op">+</span> intercept, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Regression Line'</span>)</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the plaintext URLs for each book using the metadata.ids</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> metadata_id <span class="kw">in</span> metadata_ids:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    plaintext_url <span class="op">=</span> <span class="ss">f"https://www.gutenberg.org/cache/epub/</span><span class="sc">{</span>metadata_id<span class="sc">}</span><span class="ss">/pg</span><span class="sc">{</span>metadata_id<span class="sc">}</span><span class="ss">.txt"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    plaintext_urls.append(plaintext_url)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the text file into objects named by the book title:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plaintext_urls</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>titles <span class="op">=</span> df_CL_np[<span class="st">"bibliography.title"</span>].tolist()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>book_texts <span class="op">=</span> {}</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> title, url <span class="kw">in</span> <span class="bu">zip</span>(titles, plaintext_urls):</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(url)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    plain_text <span class="op">=</span> response.text</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    book_texts[title] <span class="op">=</span> plain_text</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>alice <span class="op">=</span> book_texts[<span class="st">"Alice's Adventures in Wonderland"</span>]</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>glass <span class="op">=</span> book_texts[<span class="st">"Through the Looking-Glass"</span>]</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>game <span class="op">=</span> book_texts[<span class="st">"The Game of Logic"</span>]</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>symbolic <span class="op">=</span> book_texts[<span class="st">"Symbolic Logic"</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="cell-output cell-output-stdout">
+<pre><code>Word Count for Alice: 29564
+Word Count for Glass: 32784
+Word Count for Game: 20504
+Word Count for Symbolic: 69243</code></pre>
+</div>
+</div>
+<p>By checking the word count for each book and comparing them to the word count in the df_CL_np dataframe, we know our texts are loaded successfully into these objects. These word counts are higher than ones in the df_CL_np dataframe; we haven’t precisely tokenized them by words.</p>
+</section>
+<section id="analytical-process" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-process">Analytical Process</h3>
+<p>My Analytical Process will be divided into two parts: first, the comparison between Lewis Caroll to the others in the big classics dataset; second, a detail investigation of the features of our selected books from Lewis Carroll.<br></p>
+<p>In the first part, I will perform such comparisons by visualizing my selected variables for the classics dataset and highlighting the same variables in Lewis Carroll’s dataframe in their corresponding positions. Visualizations for this part will include histograms with highlighted lines, a scatter-plot with regression line and highlighted points.<br></p>
+</section>
+</section>
+<section id="iii.results-data-exploration-your-findings-and-your-visuals" class="level2">
+<h2 class="anchored" data-anchor-id="iii.results-data-exploration-your-findings-and-your-visuals">III.Results (data exploration, your findings, and your visuals)</h2>
+<section id="compare-lewis-carroll-to-the-big-classics-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="compare-lewis-carroll-to-the-big-classics-dataset">3.1 Compare Lewis Carroll to the Big Classics dataset</h3>
+<section id="v1.number-of-books-per-author-top-50" class="level4">
+<h4 class="anchored" data-anchor-id="v1.number-of-books-per-author-top-50">V1.Number of Books per Author (Top 50)</h4>
+<p>Now we move on to fit Lewis Caroll into the “big picture” of the large “classics.csv” dataset and compare him with the others through data analysis. In this process we will also conduct some exploratory data analysis just to learn more about the classic.csv dataset.</p>
+<p>Given the popularity of Alice’s Adventure in Wonderland , Lewis Caroll is undoubtedly a well-known writer in the field of classical literature. But how popular is he compared to the other authors, measured by the number of available books in the GP project? With the following codes we will performe this analysis.</p>
+<div class="cell" data-scrolled="true" data-execution_count="9">
+<div class="cell-output cell-output-stdout">
+<pre><code>count    555.000000
+mean       1.812613
+std        2.447467
+min        1.000000
+25%        1.000000
+50%        1.000000
+75%        2.000000
+max       34.000000
+Name: bibliography.author.name, dtype: float64
+Unknown                    34
+Shakespeare, William       19
+Twain, Mark                19
+Dickens, Charles           18
+Doyle, Arthur Conan        14
+                           ..
+Herodotus                   1
+Burke, Edmund               1
+Machen, Arthur              1
+Boy Scouts of America       1
+Morse, Katharine Duncan     1
+Name: bibliography.author.name, Length: 555, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="cell-output cell-output-stdout">
+<pre><code>Lewis Carroll's Rank: 17.0</code></pre>
+</div>
+</div>
+<div class="cell" data-scrolled="true" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization1: Visualize Lewis Carroll's rank in the top 50 authors.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot for the top 50 authors, including Lewis Carroll</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>top_authors <span class="op">=</span> author_counts.head(<span class="dv">50</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort the top authors Series by count in descending order</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>top_authors <span class="op">=</span> top_authors.sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))  <span class="co"># Optional: Adjust the size of the plot</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> top_authors.plot(kind<span class="op">=</span><span class="st">'bar'</span>, color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Highlight Lewis Carroll's bar with a different color (e.g., red)</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>lewis_carroll_index <span class="op">=</span> top_authors.index.get_loc(<span class="st">"Carroll, Lewis"</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>ax.patches[lewis_carroll_index].set_facecolor(<span class="st">'red'</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Author'</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of Books'</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'V1.Number of Books per Author (Top 50)'</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Topics_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
+<p><img src="Topics_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="75">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>slope</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
-<pre><code>array([-0.00131749])</code></pre>
-</div>
-</div>
-<p>The slope is -0.00131749, which says there isn’t an obvious negative relation between number of difficult words and flesch reading ease. This contradicts to my expectation, that there must be a obvious negative relationship bewteen this two variables.</p>
-<div class="cell" data-execution_count="85">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> df[<span class="st">"metrics.sentiments.polarity"</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.hist(dt, bins<span class="op">=</span> <span class="bu">len</span>(df[<span class="st">"metrics.sentiments.polarity"</span>].unique()), edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value'</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram Example'</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Since there are over 500 authors in the GP project and over 50% of them only have 1 book collected in the project, if we plot all of their book counts we expect to see a highly right-skewed, less insightful graph. Therefore, it’s better to tailor the graph to the top 50 writers and compare Lewis (rank 17) with the others.</p>
+<p>In “Number of Books per Author (Top 50)”, Lewis is highlighted by the red color. Authors before him are also well-known writers like “Mark Twain,”Shakespeare”, “Oscar Wilde”, “Jane Austen” and etc.We should notice the genre of their works can be quite different: for example, “Mark Twain” like to write short novels and “Shakespear” writes lots of poems and dramas; these, given their short length, may increase their authors’ book count. We also notice many books fall into names of “Unknown” and “Anonymous”, which should be ignored from this graph since they’re not correctly defined. After these modifications, we can conclude Lewis Carroll is a very popular writer even among the top 50 writers in the GP project.</p>
+</section>
+<section id="v2.correlation-between-subjectivity-and-polarity" class="level4">
+<h4 class="anchored" data-anchor-id="v2.correlation-between-subjectivity-and-polarity">V2.Correlation between Subjectivity and Polarity</h4>
+<hr>
+<p>Next, we want to perform an analysis on the sentiment analysis scores of Lewis and the others and research the relationship between sentiment subjectivity and sentiment polarity.We also want to know where Lewis sits in the big picture of the GPD project sentiment scores.</p>
+<div class="cell" data-scrolled="true" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df[<span class="st">"metrics.sentiments.subjectivity"</span>]</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"metrics.sentiments.polarity"</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>x_lewis <span class="op">=</span> df_CL_np[<span class="st">"metrics.sentiments.subjectivity"</span>]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>y_lewis <span class="op">=</span> df_CL_np[<span class="st">"metrics.sentiments.polarity"</span>]</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot for the others</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, label <span class="op">=</span> <span class="st">"others"</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot for lewis</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>plt.scatter(x_lewis, y_lewis, label <span class="op">=</span> <span class="st">"Lewis"</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Subjectivity'</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Polarity'</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'V2. Correlation between Subjectivity and Polarity '</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co"># fit regression for the others</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>lm <span class="op">=</span> LinearRegression()</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(x).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array(y).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>lm.fit(x,y )</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the coefficients of the linear model for the others</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>slope <span class="op">=</span> lm.coef_[<span class="dv">0</span>]</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>intercept <span class="op">=</span> lm.intercept_</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>plt.plot(x, slope <span class="op">*</span> x <span class="op">+</span> intercept, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Regression Line'</span>)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The slope of this graph is "</span>,slope)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Topics_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
+<p><img src="Topics_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The slope of this graph is  [0.49959358]</code></pre>
 </div>
 </div>
-<p>Sentiments polarity shows to center around 0.1 with a seemingly normal distribution.</p>
-<div class="cell" data-execution_count="83">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> df[<span class="st">"metrics.statistics.average sentence length"</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.hist(dt, bins<span class="op">=</span> <span class="bu">len</span>(df[<span class="st">"metrics.statistics.average sentence length"</span>].unique()), edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value'</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram Example'</span>)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As CORGIS database describes, “Subjectivity (as opposed to Objectivity) in particular refers to whether the text is opinionated or attempts to stay factual” and “Polarity in particular refers to how positive or negative the author is towards the content”. Through plotting them in the same scatter plot, we attempt to find if the more subjective an author is in his/her writing, the more positive will the overall attitude of the book be. <br></p>
+<p>In this graph, we identify a positive relation between the sentiment subjectivity and sentiment polarity with a slope of 0.4995. We infer there’s a possibility that the more subjective an author is, the more positive this will be in his attitude towards his works.</p>
+<p>We also view the majority of data points concentrated within the 0.4-06 subjectivity range for x-axis and the 0.0-0.2 polarity range for y-axis. Lewis Caroll locates in the center of this cluster, indicating he has an overall subjective tone and a positive choice of words in his writings.</p>
+</section>
+<section id="v3.average-sentence-length" class="level4">
+<h4 class="anchored" data-anchor-id="v3.average-sentence-length">V3.Average sentence length</h4>
+<hr>
+<p>What about Lewis’ average sentence length compared to the other writers? Does he prefer to write in short or long sentences? This is also an important factor that influences one’s writing style. From our experience, we can tell that generally short sentences provide better readability while the long sentences require the reader to be more concentrated and skillful in reading. So does Lewis try to better engage his audience with shorter sentences or make his works more readible?</p>
+<div class="cell" data-scrolled="true" data-execution_count="13">
+<div class="cell-output cell-output-stdout">
+<pre><code>2      17.0
+67     15.0
+733    13.0
+790    13.0
+Name: metrics.statistics.average sentence length, dtype: float64
+count    1006.000000
+mean       20.801193
+std        10.740644
+min         5.000000
+25%        15.000000
+50%        19.000000
+75%        24.000000
+max       235.000000
+Name: metrics.statistics.average sentence length, dtype: float64</code></pre>
+</div>
+</div>
+<p>We extract the average sentence length for four unique books in our Lewis Carroll dataframe. Then we add a five number description to the big classics dataframe on its average sentence length variable. We also visualize Lewis’ average sentence length together with the others’:</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dt_sentence_length <span class="op">=</span> df[<span class="st">'metrics.statistics.average sentence length'</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>cl_sentence_length <span class="op">=</span> df_CL_np[<span class="st">"metrics.statistics.average sentence length"</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>plt.hist(dt_sentence_length[dt_sentence_length <span class="op">&lt;</span><span class="dv">40</span>], bins <span class="op">=</span> <span class="bu">len</span>(dt_sentence_length) ,edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Average sentence length'</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'V3: Average sentence length'</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the histogram</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> length <span class="kw">in</span> cl_sentence_length:</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    plt.axvline(length, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span>, linewidth<span class="op">=</span><span class="dv">1</span>, label<span class="op">=</span><span class="ss">f'Length = </span><span class="sc">{</span>length<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the histogram</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Topics_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+<p><img src="Topics_files/figure-html/cell-15-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>Majority of sentence length stay between 0 and 50 with a center around 30 (words).</p>
+<p>In this graph, we observe 16 words/sentences is the most popular length for authors in the GP project. The graph is relatively right-skewed, meaning most writers prefer short-medium average sentence length in the first to the third quantile. Lewis’ books have shorter average sentences length than the average (mean = 20.801), all falling in between 0% to 50%. This might indicate Lewis prefers to write shorter sentence structure to engage his reader better.</p>
+</section>
+<section id="v4.readability-index" class="level4">
+<h4 class="anchored" data-anchor-id="v4.readability-index">V4.Readability index</h4>
+<hr>
+<p>To confirm our findings in our 3rd visualization, in the final step of our data analysis of comparing Lewis to the entire Classics dataframe, we will visualize the “metrics.difficulty.automated readability index” for all the books in GP project and highlight Lewis Caroll’s readability indexs with red color.</p>
+<div class="cell" data-scrolled="true" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> df[<span class="st">"metrics.difficulty.automated readability index"</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>data_lewis <span class="op">=</span> df_CL_np[<span class="st">"metrics.difficulty.automated readability index"</span>]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with two subplots</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the histogram of the unfiltered data in the first subplot</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>ax1.hist(data, bins<span class="op">=</span><span class="bu">len</span>(data.unique()), edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Value'</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'Histogram (All Data)'</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the data between 0 and 100</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>data_filtered <span class="op">=</span> data[(data <span class="op">&gt;=</span> <span class="dv">0</span>) <span class="op">&amp;</span> (data <span class="op">&lt;=</span> <span class="dv">40</span>)]</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the histogram of the filtered data in the second subplot</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>ax2.hist(data_filtered, bins<span class="op">=</span><span class="bu">len</span>(data_filtered.unique()), edgecolor<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'Value'</span>)</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'V4.Histogram (Data between 0 and 40)'</span>)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Lewis Carroll's data on the second subplot</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>ax2.hist(data_lewis, bins<span class="op">=</span><span class="bu">len</span>(data_lewis.unique()), color<span class="op">=</span><span class="st">'red'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>ax2.legend([<span class="st">'All Data'</span>,  <span class="st">'Lewis Carroll'</span>])</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout to avoid overlapping labels</span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the histograms</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"readability index of Lewis Carroll "</span>,data_lewis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Topics_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>readability index of Lewis Carroll  2       9.3
+67      8.3
+733    11.0
+790    11.8
+Name: metrics.difficulty.automated readability index, dtype: float64</code></pre>
+</div>
+</div>
+<p>Since we observe the untailored plot has an outlier (&gt;120) that stretches the whole graph to the right and reduces the interpretability of our visualization, we decide to tailor the data between 0 and 40 since the vast majority of data fall into this range. <br></p>
+<p>Based on CORGIS database’ description, “The Automated Readability Index is a number indicating the understandability of the text. This number is an approximate US Grade Level needed to comprehend the text, calculated using the characters per word and words per sentences.” For example, if a book has 11 as its readability index, this means it’s readable for an 11th grader. <br></p>
+<p>As said, we also highlight Lewis’ readability score in the second (the better) graph, by which we can see his readability indexes land on the lower side, which indicates his works are readable for young readers in middle/high school (7th grade- 12 grade).</p>
+</section>
+</section>
+<section id="detail-analysis-of-lewis-books" class="level3">
+<h3 class="anchored" data-anchor-id="detail-analysis-of-lewis-books">3.2 Detail Analysis of Lewis’ Books</h3>
+<section id="data-processing" class="level4">
+<h4 class="anchored" data-anchor-id="data-processing">Data Processing</h4>
+<p><span style="font-size: 20px;"> <span style="line-height: 1.5;"> To further process our data, we download necessary packages like nltk, matplotlib, requests. </span><br>
+</span></p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment <span class="im">import</span> vader</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> opinion_lexicon</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem.porter <span class="im">import</span> PorterStemmer</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'punkt'</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'stopwords'</span>)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'vader_lexicon'</span>)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'opinion_lexicon'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[nltk_data] Downloading package punkt to /home/jovyan/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to /home/jovyan/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package vader_lexicon to
+[nltk_data]     /home/jovyan/nltk_data...
+[nltk_data]   Package vader_lexicon is already up-to-date!
+[nltk_data] Downloading package opinion_lexicon to
+[nltk_data]     /home/jovyan/nltk_data...
+[nltk_data]   Package opinion_lexicon is already up-to-date!</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>We then extract the contents for our four selected books. We also import english stops as a python list from nltk.corpus package and analyzer from vader package for later use. Once we obtain string objects for each book, we tokenize each of them and remove stop words from them.</p>
+</section>
+<section id="v5.wordcloud" class="level4">
+<h4 class="anchored" data-anchor-id="v5.wordcloud">V5.Wordcloud</h4>
+<p>After completing the above data processing steps, we are ready to create word clouds for each book. Through these word clouds, we can grasp the most frequently appeared words in each book and potentially their themes or subjects.</p>
+<div class="cell" data-scrolled="true" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordcloud <span class="im">import</span> WordCloud</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming 'alice_words', 'glass_words', 'game_words', and 'symbolic_words' are the tokenized word lists.</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_word_cloud(book_title, word_list):</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    wordcloud <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">400</span>, background_color<span class="op">=</span><span class="st">'white'</span>).generate(<span class="st">' '</span>.join(word_list))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    plt.imshow(wordcloud, interpolation<span class="op">=</span><span class="st">'bilinear'</span>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f'Word Cloud for </span><span class="sc">{</span>book_title<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate word clouds for each book</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>generate_word_cloud(<span class="st">"Alice's Adventures in Wonderland"</span>, alice_words_nr)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>generate_word_cloud(<span class="st">"Through the Looking-Glass"</span>, glass_words_nr)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>generate_word_cloud(<span class="st">"The Game of Logic"</span>, game_words_nr)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>generate_word_cloud(<span class="st">"Symbolic Logic"</span>, symbolic_words_nr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Topics_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Topics_files/figure-html/cell-23-output-2.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Topics_files/figure-html/cell-23-output-3.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Topics_files/figure-html/cell-23-output-4.png" class="img-fluid"></p>
+</div>
+</div>
+<p>As we look through the word clouds for each graph, we do realize they are different by their subjects. The first two word clouds look similar with many identical words like “alice”, “thing”, “rabbit”, “door” because both books– Alice’s Adventure in Wonderland and Through the Looking-Glass–are storybook about the same protagonist Alice’s adventures.</p>
+<p>The later two books all fall into the “Logic” subject. Therefore, we can see many similar terms about logic frequently appear in these two books, such as “x”, “syllogism”, “conclusion”, “proposition” and etc.</p>
+</section>
+<section id="v6.-v7.-sentiment-analysis-on-lewis-fantasy-books." class="level4">
+<h4 class="anchored" data-anchor-id="v6.-v7.-sentiment-analysis-on-lewis-fantasy-books.">V6. &amp; V7. Sentiment Analysis on Lewis’ Fantasy books.</h4>
+<p>Although word clouds reflect the most frequently appeared words in these books and disclose their themes to an extent, this technique still has its own limits, such as being too generalized and unable to describe the mood behind the words.</p>
+<p>To complement the limits of a NLP technique, we usually use other NLP techniques to cover the areas it doesn’t explain. In my case, I’ll use sentiment analysis of positive and negative words to more precisely reflect Lewis Carroll’s writing style in Fantasy and Logic topics.</p>
+<div class="cell" data-scrolled="true" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create horizontal bar plots</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for negative words</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>plt.barh(<span class="bu">range</span>(<span class="bu">len</span>(top_15_alice_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>])), [count <span class="cf">for</span> word, count <span class="kw">in</span> top_15_alice_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>]], align<span class="op">=</span><span class="st">'center'</span>,color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="bu">len</span>(top_15_alice_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>])), [word <span class="cf">for</span> word, count <span class="kw">in</span> top_15_alice_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'15 Most Common Negative Words in Alice'</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for positive words</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>plt.barh(<span class="bu">range</span>(<span class="bu">len</span>(top_15_alice_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>])), [count <span class="cf">for</span> word, count <span class="kw">in</span> top_15_alice_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>]], align<span class="op">=</span><span class="st">'center'</span>,color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="bu">len</span>(top_15_alice_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>])), [word <span class="cf">for</span> word, count <span class="kw">in</span> top_15_alice_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'15 Most Common Positive Words in Alice'</span>)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for negative words</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>plt.barh(<span class="bu">range</span>(<span class="bu">len</span>(top_15_glass_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>])), [count <span class="cf">for</span> word, count <span class="kw">in</span> top_15_glass_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>]], align<span class="op">=</span><span class="st">'center'</span>,color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="bu">len</span>(top_15_glass_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>])), [word <span class="cf">for</span> word, count <span class="kw">in</span> top_15_glass_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'15 Most Common Negative Words in glass'</span>)</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for positive words</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>plt.barh(<span class="bu">range</span>(<span class="bu">len</span>(top_15_glass_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>])), [count <span class="cf">for</span> word, count <span class="kw">in</span> top_15_glass_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>]], align<span class="op">=</span><span class="st">'center'</span>,color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="bu">len</span>(top_15_glass_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>])), [word <span class="cf">for</span> word, count <span class="kw">in</span> top_15_glass_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'15 Most Common Positive Words in glass'</span>)</span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Topics_files/figure-html/cell-27-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>As we compare the 15 most frequently used positive words in Lewis’ two fantasy books Alie’s Adventure in Wonderland and Through the Looking-Glass, we find Lewis’ uses of positive words in his fantasy writing are very similar and have many overlaps across books. Words such as “like”, “well”, “great”,“good”, “wish” all ranked high in these lists.</p>
+<p>Looking into the 15 most frequently used negative words, we find although there are some overlapping words like “lying” and “poor”, the overall feeling is way more different than the homogeneousness we sense from the positive word lists. Based on this we can infer Lewis may set different challenges for Alice across two books with different use of negative words.</p>
+<p><span style="font-size: 20px;"> <span style="line-height: 1.5;"></span></span></p>
+<p><br>
+</p>
+<div class="cell" data-scrolled="true" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create horizontal bar plots</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for negative words</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plt.barh(<span class="bu">range</span>(<span class="bu">len</span>(top_15_symbolic_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>])), [count <span class="cf">for</span> word, count <span class="kw">in</span> top_15_symbolic_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>]], align<span class="op">=</span><span class="st">'center'</span>,color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="bu">len</span>(top_15_symbolic_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>])), [word <span class="cf">for</span> word, count <span class="kw">in</span> top_15_symbolic_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'15 Most Common Negative Words in symbolic'</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for positive words</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>plt.barh(<span class="bu">range</span>(<span class="bu">len</span>(top_15_symbolic_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>])), [count <span class="cf">for</span> word, count <span class="kw">in</span> top_15_symbolic_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>]], align<span class="op">=</span><span class="st">'center'</span>,color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="bu">len</span>(top_15_symbolic_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>])), [word <span class="cf">for</span> word, count <span class="kw">in</span> top_15_symbolic_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'15 Most Common Positive Words in symbolic'</span>)</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for negative words</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>plt.barh(<span class="bu">range</span>(<span class="bu">len</span>(top_15_game_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>])), [count <span class="cf">for</span> word, count <span class="kw">in</span> top_15_game_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>]], align<span class="op">=</span><span class="st">'center'</span>,color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="bu">len</span>(top_15_game_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>])), [word <span class="cf">for</span> word, count <span class="kw">in</span> top_15_game_ns_negative_words[::<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'15 Most Common Negative Words in game'</span>)</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for positive words</span></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>plt.barh(<span class="bu">range</span>(<span class="bu">len</span>(top_15_game_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>])), [count <span class="cf">for</span> word, count <span class="kw">in</span> top_15_game_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>]], align<span class="op">=</span><span class="st">'center'</span>,color<span class="op">=</span><span class="st">'orange'</span>)</span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="bu">len</span>(top_15_game_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>])), [word <span class="cf">for</span> word, count <span class="kw">in</span> top_15_game_ns_positive_words[::<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'15 Most Common Positive Words in game'</span>)</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Topics_files/figure-html/cell-30-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Regarding Lewis Logic book writing, we found similar patterns exist in his fantasy books. Lewis prefers to use positive words from the same group to express an uplifting tone, while he uses different negative words to accurately describe different qualities or negations.</p>
+</section>
+<section id="v8.polarity-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="v8.polarity-analysis">V8.Polarity Analysis</h4>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split Alice's Adventure in Wonderland by chapters.</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the regular expression pattern to match chapter headings</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>alice_chapter_pattern <span class="op">=</span> <span class="vs">r"\bCHAPTER\b"</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the text into chapters based on the pattern</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>alice_chapters <span class="op">=</span> re.split(alice_chapter_pattern, alice, flags<span class="op">=</span>re.IGNORECASE)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the first 1 (content before table of content)+12 (table of content)</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>alice_chapters <span class="op">=</span> alice_chapters[<span class="dv">13</span>:]</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize lists to store chapter numbers and sentiment scores</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>alice_chapter_numbers <span class="op">=</span> []</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>alice_sentiment_scores <span class="op">=</span> []</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over the chapters in Alice's Adventures in Wonderland</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, chapter_text <span class="kw">in</span> <span class="bu">enumerate</span>(alice_chapters, <span class="dv">1</span>):</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tokenize the chapter's text into words</span></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> nltk.word_tokenize(chapter_text)</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the total chapter sentiment score by summing the compound scores of all the words in that chapter</span></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    chapter_score <span class="op">=</span> <span class="bu">sum</span>(analyzer.polarity_scores(word)[<span class="st">"compound"</span>] <span class="cf">for</span> word <span class="kw">in</span> words)</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append chapter number and sentiment score to the respective lists</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>    alice_chapter_numbers.append(i)</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>    alice_sentiment_scores.append(chapter_score)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="31">
+<div class="cell-output cell-output-stdout">
+<pre><code>12
+12</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="cell-output cell-output-stdout">
+<pre><code>12
+12</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="cell-output cell-output-stdout">
+<pre><code>4
+4</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="37">
+<div class="cell-output cell-output-stdout">
+<pre><code>62
+62</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="38">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="39">
+<div class="cell-output cell-output-stdout">
+<pre><code>[9.590500000000002, 6.304400000000002, 9.064600000000008, 13.2118, 3.5087000000000024, 5.3100000000000005, 4.941000000000002, 6.0459, -3.1251999999999955, 10.476700000000001, 2.5824000000000016, 2.535399999999999, 12.669600000000008, 17.681499999999996, 20.522800000000004, 13.699000000000021, 23.6025, 32.70139999999999, 12.393300000000007, 24.61990000000001, 11.689600000000004, -0.5766, 0.0, 9.765900000000004, 10.095300000000112, -10.526699999999993, -18.835899999999967, 8.473900000000004, 0.0, -0.1531, -3.0889, 1.2140000000000002, 6.385199999999999, 0.0, 0.0, 0.0, 0.0, 0.0, -0.296, 0.0, -0.296, 0.2732, 0.0516, -2.9827999999999997, 0.0, 0.0, -0.8879999999999999, 0.0516, 0.0, 0.0, -0.4019, 0.0, -0.8879999999999999, 0.9981, -0.3818, -0.0837, 0.0, 0.0, 0.5337000000000001, -0.296, 2.0790000000000006, 1.7135, 1.3765999999999998, 2.9975, 1.3971, 2.4674000000000014, 5.6193, 0.5464, 0.4012, 4.4626, 0.0, 2.2735000000000003, -23.96019999999997, -0.12869999999999998, -0.5753999999999997, 0.2732, 1.9924, -8.778200000000002, -8.433900000000001, -0.6636999999999997, 1.4478, 9.459699999999994, -0.546, -4.054899999999999, 19.71710000000001, 0.6137999999999998, 3.609600000000003, -35.16309999999992, -24.156999999999957, 72.5355]</code></pre>
+</div>
+</div>
+<div class="cell" data-scrolled="true" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set colors for positive, negative, and neutral scores</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'purple'</span> <span class="cf">if</span> score <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'orange'</span> <span class="cf">if</span> score <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'blue'</span> <span class="cf">for</span> score <span class="kw">in</span> combined_list]</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>bar_width <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 2x2 grid of subplots</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">10</span>))</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the first subplot for "Alice's Adventure in Wonderland"</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].bar(alice_chapter_numbers, alice_sentiment_scores, color<span class="op">=</span>colors, width<span class="op">=</span>bar_width)</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_xlabel(<span class="st">"Scene Number"</span>)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_ylabel(<span class="st">"Sentiment Score"</span>)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">"Alice's Adventure in Wonderland"</span>)</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the second subplot for "Through the Looking Glass"</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].bar(glass_chapter_numbers, glass_sentiment_scores, color<span class="op">=</span>colors, width<span class="op">=</span>bar_width)</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_xlabel(<span class="st">"Scene Number"</span>)</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_ylabel(<span class="st">"Sentiment Score"</span>)</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">"Through the Looking Glass"</span>)</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the third subplot for "game"</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].bar(game_chapter_numbers, game_sentiment_scores, color<span class="op">=</span>colors, width<span class="op">=</span>bar_width)</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_xlabel(<span class="st">"Scene Number"</span>)</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_ylabel(<span class="st">"Sentiment Score"</span>)</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">"game"</span>)</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the fourth subplot for "symbolic"</span></span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].bar(symbolic_chapter_numbers, symbolic_sentiment_scores, color<span class="op">=</span>colors, width<span class="op">=</span>bar_width)</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_xlabel(<span class="st">"Scene Number"</span>)</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_ylabel(<span class="st">"Sentiment Score"</span>)</span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">"symbolic"</span>)</span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout and display the plots</span></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Topics_files/figure-html/cell-41-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>As we visualize the polarity scores of Lewis’ four books, we identify he always hold a positive tone in his fantasy books but write more objectively (close to 0 score) or uses strong negations in his logic books. My assumption is in the logic book, since negations or counter examples are freuqently use as parts of the proof, it results an overall lower sentiment score for this type of books.</p>
+</section>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>what does your analysis show, what is the big picture, and how are these findings useful?</p>
+<p>Based on the above analysis, I’m able to conclude some uniqueness of Lewis Caroll few features I discover his writing style: 1. Lewis Caroll is a very popular (ranked as 17th) writer over 555 writers collected in the GP project. 2. He tends to be subjective in his writing with an overall positive attitude. 3. He prefers to write in short sentences, lower than the overall average sentence length in the GP project. 4. His works are usually easy to read, even for the 7th-12th grader. 5. Given he’s both a Mathematician and a fantasy writer, to create engaging works in both fields for different types of readers, Lewis approaches his writings with different tones. For his fantasy writings, he tends to use many positive words and holds a constant positive tone throughout the books. But for his logic books, he tends to be more critical and objective by using more negative or neutral words. 6. His choices of positive words are very similar across his fantasy books while the negative words are different to represent the varying adventure his protagonist–Alice–experiences. Similar patent is found in his logic writings: similar choices of positive words, different negative words to express varying negations and qualities.</p>
+<p>These findings are useful for us to better understand Lewis Carroll’s writing style and are presentable for educational purposes. I think they will be very helpful literature teachers who want to incorporate Digital Humanity methods into his/her lecture and introduce Lewis Carroll from a computational angle. For Lewis’ reader, these findings are also useful as you can examine them in your reading of Lewis’ works and make comparisons. Although some of them are proved to be not true, in your process of validation–finding the right features about Lewis from the text–you still learn more than reading his texts passively. I think these are the benefits offered by my findings.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
